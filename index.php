@@ -10,11 +10,8 @@
 	$dbh = $db->connect($hostName, $database, $username, $password); 
 	
 	$allColors = $db->getAllColors($dbh);
-	var_dump($allColors);
 	
-	echo "end";
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>

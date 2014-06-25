@@ -21,10 +21,9 @@ class DbModel {
 	public function getAllColors($dbh) {
 			
 		$resultsArr = array();	
-		
-		$query= $dbh->prepare('SELECT color_id, color FROM colors');
+		$query= $dbh->prepare('SELECT color_id, color 
+							   FROM colors');
 		$query->execute();
-		
 		$results = $query->fetchAll();
 		
 		foreach($results as $result) {
@@ -35,4 +34,21 @@ class DbModel {
 		return $resultsArr;
 		
 	}
+	
+	public function getAllVotes($dbh, $colorId) {
+		
+		$resultsArr = array();	
+		$query= $dbh->prepare('SELECT vote_id, total_votes
+							   FROM votes
+							   WHERE color_id = ?');
+		
+		$query->execute(array($colorId));
+		$results = $query->fetchAll();
+		foreach($results as $result) {
+			$resultsArr[$result['vote_id']] = $result['total_votes'];
+		}
+		
+		return $resultsArr;
+	}
+	
 }
