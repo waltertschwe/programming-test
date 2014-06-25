@@ -19,7 +19,6 @@
 <html lang="en">
 <head>
 <title>Programming Test</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 </head>
@@ -54,15 +53,15 @@ totals shown.<br/><br/>
 	<!--<div class="col-xs-6 col-md-4">
  </div> -->
 <div class="col-xs-6 col-md-4"><!-- Overall Results Pulled from datasource -->
-  <ul class="list-group">
+  <ul id="color-group" class="list-group">
     <li class="list-group-item active">
         <span class="glyphicon glyphicon-stats"></span>&nbsp;Colors
     </li>
     <?php 
-    	foreach($allColors as $allColor) {
+    	foreach($allColors as $key => $value) {
     ?> 
-		<li class="list-group-item">
-	    	<a href="#"><?php echo $allColor?></a>&nbsp;&nbsp;
+		<li class="list-group-item" data-id="<?php echo $key; ?>">
+	    	<a href="#"><?php echo $value; ?></a>&nbsp;&nbsp;
 	    </li>
     <?php
 		}
