@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#color-group li').on("click", function(){
+	$('#color-group').on("click", "li", function(){
 		colorId = $(this).attr('data-id');
 		$.ajax({
    			 type: 'GET',
@@ -20,6 +20,7 @@ $(document).ready(function(){
 	      		// TODO: log errorThrown to php log or other logger  
 	   		 }
 	 	}); 
+	 	return false;
 	});
 	$('#tally').on("click", function(){
 		var totalVal = 0;	
@@ -32,5 +33,6 @@ $(document).ready(function(){
 		});
 		$("#total-value").empty();
 		$("#total-value").append("<b>" + totalVal + "</b>");
+		return false;
 	});
 });		
