@@ -13,11 +13,24 @@ $(document).ready(function(){
    			 		var jsonValue = parseInt(value);
    			 	 	total += jsonValue;
 		        });
+		        $("#total-"+colorId).attr('total-clicked', total);
 		        $("#total-"+colorId).append(total);
    			 },
 	   		 error: function(XMLHttpRequest, textStatus, errorThrown) {
 	      		// TODO: log errorThrown to php log or other logger  
 	   		 }
 	 	}); 
+	});
+	$('#tally').on("click", function(){
+		var totalVal = 0;	
+		var listItems = $("#votes li");
+		listItems.each(function(li) {
+    		if($(this).attr('total-clicked')) {
+    			var total = parseInt(($(this).attr('total-clicked')));
+    			totalVal += total;
+    		}
+		});
+		$("#total-value").empty();
+		$("#total-value").append("<b>" + totalVal + "</b>");
 	});
 });		

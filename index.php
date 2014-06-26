@@ -34,7 +34,7 @@
               <h3 class="panel-title"><span class="glyphicon glyphicon-tower"></span>&nbsp;&nbsp;Requirements</h3>
             </div>
             <div class="panel-body">
-                1. Create a web page in PHP that uses the two MySQL tables above “Colors” and “Votes”. <br/><br/>
+                1. Create a web page in PHP that uses the two MySQL tables above Colors and Votes. <br/><br/>
                 2. The left column should be populated from reading all the entries in the Colors table.<br/><br/>
                 3. The colors should be links, so that when you click on it, an Ajax call populates the Votes
 (obtained from MySQL) in the right column next to the color.<br/><br/>
@@ -63,6 +63,9 @@ totals shown.<br/><br/>
     <?php
 		}
 	?> 
+	 	<li id="tally" class="list-group-item">
+	    	<b><a href="#">TOTAL</a></b>
+		</li>
 	</ul>	
 </div>
 <div class="col-xs-6 col-md-4"><!-- Overall Results Pulled from datasource -->
@@ -79,6 +82,9 @@ totals shown.<br/><br/>
     <?php
 		}
 	?> 
+		<li id="total-value" class="list-group-item">
+	    	&nbsp;
+		</li>
 	</ul>
 </div>
 
