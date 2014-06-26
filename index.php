@@ -38,7 +38,7 @@
                 2. The left column should be populated from reading all the entries in the Colors table.<br/><br/>
                 3. The colors should be links, so that when you click on it, an Ajax call populates the Votes
 (obtained from MySQL) in the right column next to the color.<br/><br/>
-				4. When Clicking on “Total”, use JavaScript only (no server involvement) to add up and present the
+				4. When Clicking on Total, use JavaScript only (no server involvement) to add up and present the
 totals shown.<br/><br/>
 				5. Write something that you would feel comfortable shipping & maintaining.<br/><br/>
                 <b>*NOTE*</b> Any bugs please contact:<br/> 
@@ -52,7 +52,7 @@ totals shown.<br/><br/>
 <div class="col-xs-6 col-md-4"><!-- Overall Results Pulled from datasource -->
   <ul id="color-group" class="list-group">
     <li class="list-group-item active">
-        <span class="glyphicon glyphicon-stats"></span>&nbsp;Colors
+        <span class="glyphicon glyphicon-adjust"></span>&nbsp;Colors
     </li>
     <?php 
     	foreach($allColors as $key => $value) {
@@ -65,6 +65,23 @@ totals shown.<br/><br/>
 	?> 
 	</ul>	
 </div>
+<div class="col-xs-6 col-md-4"><!-- Overall Results Pulled from datasource -->
+  <ul id="votes" class="list-group">
+    <li class="list-group-item list-group-item-success">
+        <span class="glyphicon glyphicon-stats"></span>&nbsp;Votes
+    </li>
+    <?php 
+    	foreach($allColors as $key => $value) {
+    ?> 
+		<li id="total-<?php echo $key; ?>" class="list-group-item">
+			&nbsp;
+	    </li>
+    <?php
+		}
+	?> 
+	</ul>
+</div>
+
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
