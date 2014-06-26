@@ -23,8 +23,7 @@
 <div class="container">
     <div class="page-header">
         <h1><font color="blue">Programming Test</font></h1>
-    </div
-</div>
+    </div>
 <div class="row"></div>
 <div class="row">
 	<div class="col-xs-6 col-md-4">
@@ -43,12 +42,9 @@ totals shown.<br/><br/>
                 <b>*NOTE*</b> Any bugs please contact:<br/> 
                 <a href="mailto:wschweitzer00@gmail.com">Walter Schweitzer</a><br/>
             </div>
-          </div>
-		
-	</div>
-	<!--<div class="col-xs-6 col-md-4">
- </div> -->
-<div class="col-xs-6 col-md-4"><!-- Overall Results Pulled from datasource -->
+      </div>
+</div>
+<div class="col-xs-6 col-md-4">
   <ul id="color-group" class="list-group">
     <li class="list-group-item active">
         <span class="glyphicon glyphicon-adjust"></span>&nbsp;Colors
@@ -86,7 +82,7 @@ totals shown.<br/><br/>
 		</li>
 	</ul>
 </div>
-
+</div>
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
