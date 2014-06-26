@@ -2,14 +2,30 @@
 
 	require_once("class/DbModel.php");
 	
+	$memcache = new Memcache;
+	$memcache->connect('localhost', 11211) or die ("Could not connect");
+	
+	
+	## get cached handle or make new db connection
+	$dbh = $dbCache;
 	$db = new DbModel();
 	$username = 'root';
 	$password = '%NN6prxt5';
 	$hostName = 'localhost';
 	$database = 'programming_test';
 	$dbh = $db->connect($hostName, $database, $username, $password); 
-	
-	$allColors = $db->getAllColors($dbh);
+		
+	$getColorsKey = md5('Get Colors'); 
+	$colorsCache = array();
+	$colorsCache = $memcache->get($getColorsKey);
+
+	if($colorsCache) {
+		$allColors = $colorsCache;
+	} else {
+		$allColors = $db->getAllColors($dbh);
+		// cache colors connection for 1200 seconds
+		$memcache->set($getColorsKey, $allColors, MEMCACHE_COMPRESSED, 1200);
+	}
 	
 ?>
 <!doctype html>

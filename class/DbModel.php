@@ -10,8 +10,8 @@ class DbModel {
 		    $dbh = new PDO('mysql:host=' . $hostName . ';dbname='. $database, $user, $password);
 		   
 		} catch (PDOException $e) {
-		    print "Connection failed: " . $e->getMessage() . "<br/>";
-		    exit();
+		    error_log("Connection failed: " . $e->getMessage() . "<br/>");
+		 
 		}
 		
 		return $dbh;
